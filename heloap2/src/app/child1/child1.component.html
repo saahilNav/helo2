@@ -1,0 +1,29 @@
+<p>
+  child1 works!
+</p>
+<!-- <input [(ngModel)]="text"> -->
+<!-- 
+ <div class="listImagaArrat1">
+<span class="spnclass" *ngFor="let obj of imageArray let i=index">
+  <img appImagload [datas]="obj.imgPath"   #imgId    width="100%"  alt="pic does not exist"> 
+  <p class="p1">{{obj.Id}} {{obj.name}} {{obj.surname}} 
+    {{obj.ocupation}} {{obj.age}}{{obj.address}} </p>
+    <div><app-child-component (myChilData)="sendData($event)" [showchild]="showvar" [user]="imageArray[i]"> </app-child-component></div>
+</span> -->
+
+<div class="spnclass" *ngFor="let obj of imageArray; let i=index">
+  <app-child2 [user]="obj" (myChilData)="value=$event"></app-child2>
+</div>
+
+<div *ngIf="value">
+  <br>
+  <br>
+  <!-- <img src={{value?.imgPath}}> -->
+   name:{{value.name}}
+    Id1: {{value.Id}}
+  address:{{value.address}}
+   age:{{value.age}}
+  {{value.imgPath}}
+  {{value.surname}}
+  {{value.occupation}}
+</div>

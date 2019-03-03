@@ -1,0 +1,7 @@
+
+  <div class="listImagaArrat" >
+      <!-- <div class="listImagaArrat" *ngFor="let i of user" > -->
+      <img appImagload [datas]="user.imgPath"  #imgId    width='100%' style="padding-top:10px;"   alt="pic does not exist"> 
+      <p class="p1">{{user.Id}} {{user.name}} {{user.surname}}{{user.ocupation}} {{user.age}}{{user.address}} </p>
+       <div><button (click)="sendChildData(user)"> Get Data</button></div>
+      </div>
